@@ -20,9 +20,10 @@ export class EmployeeListComponent {
   getEmployees() {
     this.apiService
       .get('https://dreamsketch-backend.onrender.com/employees')
-      .subscribe((res) => {
-        console.log(res);
-        this.employees.data = res as any[];
+      .subscribe((res: any) => {
+        if (res?.status === 'success' && res?.data?.length) {
+          this.employees.data = res.data;
+        }
       });
   }
 }

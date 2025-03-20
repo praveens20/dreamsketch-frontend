@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  UntypedFormControl,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -28,9 +32,9 @@ export class AppComponent {
         name,
         empId,
       })
-      .subscribe((res) => {
-        console.log(res);
-        this.empForm.reset();
+      .subscribe((res: any) => {
+        if (res?.status === 'success') {
+        }
       });
   }
 }
