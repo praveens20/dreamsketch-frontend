@@ -1,4 +1,4 @@
-<form [formGroup]="empForm">
+<!-- <form [formGroup]="empForm">
 
   <mat-form-field class="example-full-width">
     <mat-label>Employee ID</mat-label>
@@ -11,15 +11,5 @@
   </mat-form-field>
 
   <button mat-button type="submit" (click)="addEmployee()" [disabled]="empForm.invalid">Add Employee</button>
-</form>
-
-<table>
-  <tr>
-    <th>Employee ID</th>
-    <th>Employee Name</th>
-  </tr>
-  <tr *ngFor="let employee of employees">
-    <td>{{employee.emp_id}}</td>
-    <td>{{employee.emp_name}}</td>
-  </tr>
-</table>
+</form> -->
+<router-outlet></router-outlet>

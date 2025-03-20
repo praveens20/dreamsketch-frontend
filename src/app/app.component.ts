@@ -10,7 +10,6 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 export class AppComponent {
   title = 'dreamsketch-frontend';
   empForm!: UntypedFormGroup;
-  employees: any[] = [];
 
   constructor(private apiService: ApiService) {}
 
@@ -19,16 +18,6 @@ export class AppComponent {
       name: new UntypedFormControl('', [Validators.required]),
       empId: new UntypedFormControl('', [Validators.required]),
     });
-    this.getEmployees();
-  }
-
-  getEmployees() {
-    this.apiService
-      .get('https://dreamsketch-backend.onrender.com/employees')
-      .subscribe((res) => {
-        console.log(res);
-        this.employees = res as any[];
-      });
   }
 
   addEmployee() {
@@ -41,7 +30,6 @@ export class AppComponent {
       })
       .subscribe((res) => {
         console.log(res);
-        this.getEmployees();
         this.empForm.reset();
       });
   }

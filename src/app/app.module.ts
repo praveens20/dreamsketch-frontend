@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { MaterialModule } from './material/material.module';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    // AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent],
