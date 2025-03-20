@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "dreamsketch-frontend:build:production"
+              "buildTarget": "dreamsketch-frontend:build:production"
             },
             "development": {
-              "browserTarget": "dreamsketch-frontend:build:development"
+              "buildTarget": "dreamsketch-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dreamsketch-frontend:build"
+            "buildTarget": "dreamsketch-frontend:build"
           }
         },
         "test": {
