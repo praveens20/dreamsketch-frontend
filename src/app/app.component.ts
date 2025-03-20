@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './services/api.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +9,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'dreamsketch-frontend';
-  empForm!: FormGroup;
+  empForm!: UntypedFormGroup;
   employees: any[] = [];
 
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
-    this.empForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
-      empId: new FormControl('', [Validators.required]),
+    this.empForm = new UntypedFormGroup({
+      name: new UntypedFormControl('', [Validators.required]),
+      empId: new UntypedFormControl('', [Validators.required]),
     });
     this.getEmployees();
   }
