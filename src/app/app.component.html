@@ -1,6 +1,15 @@
 <form [formGroup]="empForm">
-  <input type="text" formControlName="name" placeholder="Employee Name" />
-  <input type="text" formControlName="empId" placeholder="Employee ID (DS_XX)" />
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Employee ID</mat-label>
+    <input matInput placeholder="Employee ID (DS_XX)" formControlName="empId">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Employee Name</mat-label>
+    <input matInput placeholder="Employee Name" formControlName="name">
+  </mat-form-field>
+
   <button mat-button type="submit" (click)="addEmployee()" [disabled]="empForm.invalid">Add Employee</button>
 </form>
 
