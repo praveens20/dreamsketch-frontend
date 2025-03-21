@@ -1,17 +1,3 @@
-<!-- <form [formGroup]="empForm">
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Employee ID</mat-label>
-    <input matInput placeholder="Employee ID (DS_XX)" formControlName="empId">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <mat-label>Employee Name</mat-label>
-    <input matInput placeholder="Employee Name" formControlName="name">
-  </mat-form-field>
-
-  <button mat-button type="submit" (click)="addEmployee()" [disabled]="empForm.invalid">Add Employee</button>
-</form> -->
 <mat-sidenav-container class="container">
   <mat-sidenav #sidenav mode="side" opened="true" [class.collapsed]="!opened">
     <mat-nav-list>
@@ -19,7 +5,7 @@
         <mat-icon>menu</mat-icon>
         <span *ngIf="opened">Collapse</span>
       </a>
-      <a mat-list-item routerLink="/" matTooltip="Dashboard" matTooltipPosition="right">
+      <a mat-list-item routerLink="admin/dashboard" matTooltip="Dashboard" matTooltipPosition="right">
         <mat-icon>dashboard</mat-icon>
         <span *ngIf="opened">Dashboard</span>
       </a>

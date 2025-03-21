@@ -1,4 +1,4 @@
-@import "styles/variables";
+@import "src/styles/variables";
 
 html,
 body {
@@ -157,6 +157,39 @@ button {
   padding: 0px 16px;
 
   h2 {
-    margin: 0;
+    margin: 0px 16px 0px 0px;
+  }
+}
+
+.mat-mdc-form-field {
+  // padding: 10px 0;
+  max-height: 40px;
+
+  .mat-mdc-text-field-wrapper {
+    height: 40px;
+  }
+}
+
+.mat-input-element {
+  height: 35px !important;
+  line-height: 35px !important;
+  font-size: 16px;
+}
+
+button {
+  &.mdc-button {
+    background-color: $primary-1;
+    color: white !important;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    font-weight: 400;
+    white-space: nowrap; /* Ensure text stays on one line */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis;
+
+    &.mat-mdc-button-disabled {
+      opacity: 0.3;
+    }
   }
 }
