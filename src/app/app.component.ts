@@ -5,6 +5,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,10 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'dreamsketch-frontend';
   empForm!: UntypedFormGroup;
+  displayedColumns = ["id", "name"];
+  dataSource = new MatTableDataSource();
+  opened = false; // Sidebar default state
 
   constructor(private apiService: ApiService) {}
 
@@ -36,5 +39,9 @@ export class AppComponent {
         if (res?.status === 'success') {
         }
       });
+  }
+
+  toggleSidebar() {
+    this.opened = !this.opened;
   }
 }

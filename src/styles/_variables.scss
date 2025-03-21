@@ -15,10 +15,12 @@
 
 
 // Define color variables
-$primary-color: #1976d2; // Theme primary color
-$hover-color: rgba(25, 118, 210, 0.1);
-$selected-color: rgba(25, 118, 210, 0.2);
-$border-color: #e0e0e0;
-$header-bg: #f5f5f5;
-$even-row-bg: #fafafa;
+$primary-1: #1976d2;
+$neutral-2: #f5f5f5;
+$neutral-3: #fafafa;
+$neutral-4: #505f79;
+
 $text-color: #555;
+$border-color: #e0e0e0;
+$row-hover-color: rgba(25, 118, 210, 0.1);
+$selected-color: rgba(25, 118, 210, 0.2);

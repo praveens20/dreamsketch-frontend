@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 form {
   display: flex;
   flex-direction: column;
@@ -9,4 +11,60 @@ form {
     background-color: green;
     color: white;
   }
+}
+
+.container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: 200px;
+  transition: width 0.3s ease-in-out;
+  background-color: $neutral-2;
+  border-color: $border-color;
+
+  &.collapsed {
+    width: 52px;
+
+    a {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    ::ng-deep .mdc-list-item__primary-text {
+      display: flex;
+    }
+
+    mat-icon {
+      margin-right: 10px;
+      color: $neutral-4;
+    }
+
+    span {
+      color: $neutral-4;
+    }
+  }
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &.sidebar-open {
+    margin-left: 200px !important;
+  }
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto; /* Enables scrolling */
+  // padding: 20px;
 }

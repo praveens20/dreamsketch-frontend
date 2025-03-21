@@ -1,0 +1,4 @@
+.mat-table-container {
+  height: calc(100vh - 98px); /* Adjust based on toolbar + search bar */
+  overflow-y: auto;
+}

@@ -2,21 +2,23 @@
     <input matInput placeholder="Search" />
 </div>
 
-<table mat-table [dataSource]="employees">
-    <ng-container matColumnDef="empName">
-        <th mat-header-cell id="name" *matHeaderCellDef>Name</th>
-        <td mat-cell class="nameTitle" *matCellDef="let employee">
-            <p class="text-ellipse">{{ employee?.emp_name }}</p>
-        </td>
-    </ng-container>
+<div class="mat-table-container">
+    <table mat-table [dataSource]="employees">
+        <ng-container matColumnDef="empName">
+            <th mat-header-cell id="name" *matHeaderCellDef>Name</th>
+            <td mat-cell class="nameTitle" *matCellDef="let employee">
+                <p class="text-ellipse">{{ employee?.emp_name }}</p>
+            </td>
+        </ng-container>
 
-    <ng-container matColumnDef="empId">
-        <th mat-header-cell id="emp-id" *matHeaderCellDef>Employee ID</th>
-        <td mat-cell class="description" *matCellDef="let employee">
-            <p class="text-ellipse desc-ellipse">{{ employee?.emp_id || "-" }}</p>
-        </td>
-    </ng-container>
+        <ng-container matColumnDef="empId">
+            <th mat-header-cell id="emp-id" *matHeaderCellDef>Employee ID</th>
+            <td mat-cell class="description" *matCellDef="let employee">
+                <p class="text-ellipse desc-ellipse">{{ employee?.emp_id || "-" }}</p>
+            </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns" href="javascript:void(0)"></tr>
-</table>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" href="javascript:void(0)"></tr>
+    </table>
+</div>
