@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
@@ -13,23 +14,30 @@ export class EmployeeListComponent {
   employees = new MatTableDataSource();
 
   constructor(
-    private readonly apiService: ApiService,
+    private readonly employeeService: EmployeeService,
     private readonly utility: UtilityService
   ) {}
 
   ngOnInit() {
-    this.getEmployees();
+    this.fetchEmployees();
   }
 
-  getEmployees() {
-    this.apiService
-      .get('https://dreamsketch-backend.onrender.com/employees')
-      .subscribe((res: any) => {
-        if (res?.status === 'success' && res?.data?.length) {
-          this.employees.data = res.data;
-        } else {
-          this.utility.showSnackbar(res?.message);
-        }
-      });
+  fetchEmployees() {
+    this.employeeService.getEmployees().subscribe((res: any) => {
+      if (res?.status === 'success' && res?.data?.length) {
+        this.employees.data = res.data;
+      } else {
+        this.utility.showSnackbar(res?.message);
+      }
+    });
+  }
+
+  openEmployeeDialog() {
+    const dialogRef = this.utility.openDialog();
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Dialog closed with result:', result);
+      if (result) this.fetchEmployees();
+    });
   }
 }

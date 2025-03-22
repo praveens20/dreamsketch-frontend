@@ -5,7 +5,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ApiService } from 'src/app/services/api.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { UtilityService } from 'src/app/services/utility.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class EmployeeDetailsComponent implements OnInit {
   empForm!: UntypedFormGroup;
 
   constructor(
-    private readonly apiService: ApiService,
+    private readonly employeeService: EmployeeService,
     private readonly utility: UtilityService,
     public dialogRef: MatDialogRef<EmployeeDetailsComponent>
   ) {}
@@ -30,19 +30,13 @@ export class EmployeeDetailsComponent implements OnInit {
   }
 
   addEmployee() {
-    const { name, empId } = this.empForm.value;
-
-    this.apiService
-      .post('http://localhost:3000/employees', {
-        name,
-        empId,
-      })
+    this.employeeService
+      .createEmployee(this.empForm.value)
       .subscribe((res: any) => {
         if (res?.status === 'success') {
           this.dialogRef.close(true);
-        } else {
-          this.utility.showSnackbar(res?.error?.message ?? res?.message);
         }
+        this.utility.showSnackbar(res?.error?.message ?? res?.message);
       });
   }
 }

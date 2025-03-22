@@ -14,8 +14,9 @@ button {
 
 .main-container {
   display: flex;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 65px);
   overflow-y: auto;
+  background-color: white;
 
   .left-content {
     width: 100%;
@@ -129,7 +130,7 @@ button {
 .mat-table-search {
   width: 100%;
   display: flex;
-  margin-bottom: 2px;
+  // margin-bottom: 2px;
   outline: 1px solid $border-color;
 
   .mat-mdc-input-element {
@@ -143,6 +144,19 @@ button {
     &:focus-visible {
       border: none;
       outline: 2px solid $selected-color;
+    }
+  }
+
+  button {
+    &.mdc-button {
+      height: 32px;
+      background-color: transparent;
+      color: $primary-1 !important;
+      padding: 0px 16px;
+    }
+
+    .mat-icon {
+      display: inline-table;
     }
   }
 }
