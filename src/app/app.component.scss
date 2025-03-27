@@ -37,6 +37,11 @@ mat-sidenav {
       margin-left: 10px;
       color: $neutral-4;
     }
+
+    &:last-child {
+      position: absolute;
+      bottom: 0;
+    }
   }
 }
 
