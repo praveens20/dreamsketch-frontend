@@ -9,8 +9,8 @@ export class ProjectService {
 
   getProjects() {
     return this.apiService.get(
-      // 'https://dreamsketch-backend.onrender.com/projects'
-      'http://localhost:3000/projects'
+      'https://dreamsketch-backend.onrender.com/projects'
+      // 'http://localhost:3000/projects'
     );
   }
 
@@ -18,8 +18,8 @@ export class ProjectService {
     const { name, clientName, plannedStartDate, plannedEndDate } = project;
 
     return this.apiService.post(
-      // 'https://dreamsketch-backend.onrender.com/projects',
-      'http://localhost:3000/projects',
+      'https://dreamsketch-backend.onrender.com/projects',
+      // 'http://localhost:3000/projects',
       {
         name,
         // empId,
