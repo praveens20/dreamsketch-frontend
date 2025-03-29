@@ -1,1 +1,9 @@
-<p>employee-info works!</p>
+<div>
+    Name - {{employee.emp_name}}
+</div>
+<div>
+    ID - {{employee.emp_id}}
+</div>
+
+
+<button (click)="emitEmployeeEvent('CLOSE')">Close</button>

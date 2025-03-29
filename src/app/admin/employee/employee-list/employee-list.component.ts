@@ -4,6 +4,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { UtilityService } from 'src/app/services/utility.service';
 import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
+import { ActionTypeOnEmployee } from '../employee-info/employee-info.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,6 +14,7 @@ import { EmployeeDetailsComponent } from '../employee-details/employee-details.c
 export class EmployeeListComponent {
   displayedColumns: string[] = ['empId', 'empName'];
   employees = new MatTableDataSource();
+  selectedEmployee: any;
 
   constructor(
     private readonly employeeService: EmployeeService,
@@ -40,5 +42,19 @@ export class EmployeeListComponent {
       console.log('Dialog closed with result:', result);
       if (result) this.fetchEmployees();
     });
+  }
+
+  selectEmployee(employee: any) {
+    this.selectedEmployee = employee;
+  }
+
+  handleActionOnEmployee(event: ActionTypeOnEmployee) {
+    switch (event) {
+      case 'CLOSE':
+        this.selectEmployee(null);
+        break;
+      default:
+        return;
+    }
   }
 }
