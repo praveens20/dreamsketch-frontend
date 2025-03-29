@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EmployeeDetailsComponent } from '../admin/employee/employee-details/employee-details.component';
+import { ComponentType } from '@angular/cdk/portal';
 
 @Injectable({
   providedIn: 'root',
@@ -21,8 +21,8 @@ export class UtilityService {
     });
   }
 
-  openDialog(disableClose: boolean = false) {
-    return this.dialog.open(EmployeeDetailsComponent, {
+  openDialog(component: ComponentType<any>, disableClose: boolean = false) {
+    return this.dialog.open(component, {
       width: '400px',
       disableClose, // Prevent closing on outside click
     });

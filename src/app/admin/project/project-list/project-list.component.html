@@ -1,0 +1,42 @@
+<div class="mat-table-search">
+    <input matInput placeholder="Search" />
+    <button mat-button (click)="openProjectDialog()">
+        <mat-icon>add</mat-icon>
+        Add Project
+    </button>
+</div>
+
+<div class="mat-table-container">
+    <table mat-table [dataSource]="projects">
+        <ng-container matColumnDef="projectName">
+            <th mat-header-cell id="name" *matHeaderCellDef>Name</th>
+            <td mat-cell class="nameTitle" *matCellDef="let project">
+                <p class="text-ellipse">{{ project?.project_name }}</p>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="projectDescription">
+            <th mat-header-cell id="emp-id" *matHeaderCellDef>Description</th>
+            <td mat-cell class="description" *matCellDef="let project">
+                <p class="text-ellipse desc-ellipse">{{ project?.meta_data?.description || "-" }}</p>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="plannedStartDate">
+            <th mat-header-cell *matHeaderCellDef>Planned Start Date</th>
+            <td mat-cell class="description" *matCellDef="let project">
+                <p class="text-ellipse desc-ellipse">{{ project?.planned_start_date | date : 'MMM d y, h:mm a' }}</p>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="plannedEndDate">
+            <th mat-header-cell *matHeaderCellDef>Planned End Date</th>
+            <td mat-cell class="description" *matCellDef="let project">
+                <p class="text-ellipse desc-ellipse">{{ project?.planned_end_date | date : 'MMM d y, h:mm a' }}</p>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns" href="javascript:void(0)"></tr>
+    </table>
+</div>

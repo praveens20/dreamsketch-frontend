@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/services/api.service';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { UtilityService } from 'src/app/services/utility.service';
+import { EmployeeDetailsComponent } from '../employee-details/employee-details.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -33,7 +34,7 @@ export class EmployeeListComponent {
   }
 
   openEmployeeDialog() {
-    const dialogRef = this.utility.openDialog();
+    const dialogRef = this.utility.openDialog(EmployeeDetailsComponent);
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('Dialog closed with result:', result);

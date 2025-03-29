@@ -9,6 +9,10 @@
         <mat-icon>people</mat-icon>
         <span *ngIf="opened">Employees</span>
       </a>
+      <a mat-list-item routerLink="admin/projects" matTooltip="Projects" matTooltipPosition="right">
+        <mat-icon>folder</mat-icon>
+        <span *ngIf="opened">Projects</span>
+      </a>
       <a mat-list-item routerLink="/settings" matTooltip="Settings" matTooltipPosition="right">
         <mat-icon>settings</mat-icon>
         <span *ngIf="opened">Settings</span>

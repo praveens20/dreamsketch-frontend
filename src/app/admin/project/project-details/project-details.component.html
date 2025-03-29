@@ -1,0 +1,16 @@
+<div class="popup-wrap" data-backdrop="static" data-keyboard="false">
+    <div class="popup-header">
+        <h5>Project</h5>
+    </div>
+    <div class="popup-content">
+        <form [formGroup]="projectForm">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input matInput placeholder="Project Name" formControlName="name">
+            </mat-form-field>
+
+        </form>
+    </div>
+    <div class="popup-footer">
+        <button mat-button type="submit" (click)="addProject()" [disabled]="projectForm.invalid">Add Project</button>
+    </div>
+</div>
