@@ -26,7 +26,7 @@
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns" href="javascript:void(0)"
-                    (click)="selectEmployee(row)"></tr>
+                    (click)="selectEmployee(row)" [class.selected]="selectedEmployee?.id == row?.id"></tr>
             </table>
         </div>
     </div>

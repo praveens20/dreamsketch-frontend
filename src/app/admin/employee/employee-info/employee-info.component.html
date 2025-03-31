@@ -1,9 +1,21 @@
-<div>
-    Name - {{employee.emp_name}}
-</div>
-<div>
-    ID - {{employee.emp_id}}
-</div>
+<div class="info-panel">
+    <div class="info-panel-header">
+        <span>Info</span>
+        <mat-icon (click)="emitEmployeeEvent('CLOSE')">close</mat-icon>
+    </div>
 
+    <div class="info-panel-body">
+        <span> {{employee.emp_id}} - {{employee.emp_name}} </span>
 
-<button (click)="emitEmployeeEvent('CLOSE')">Close</button>
+        <div class="info-properties-container">
+            <div class="info-property">
+                <div class="info-property-name">Joining Date</div>
+                <span class="info-property-value"> timen</span>
+            </div>
+            <div class="info-property">
+                <div class="info-property-name">Exit Date</div>
+                <span class="info-property-value"> timen</span>
+            </div>
+        </div>
+    </div>
+</div>

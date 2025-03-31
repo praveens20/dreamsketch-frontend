@@ -12,12 +12,14 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { ProjectInfoComponent } from './project/project-info/project-info.component';
 import { ProjectDetailsComponent } from './project/project-details/project-details.component';
+import { RoleComponent } from './role/role.component';
 
 const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'employees', component: EmployeeComponent },
   { path: 'projects', component: ProjectComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: 'employees', pathMatch: 'full' }, // Redirect unknown routes
+  { path: 'roles', component: RoleComponent },
+  { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }, // Redirect unknown routes
 ];
 
 const components = [
@@ -28,10 +30,13 @@ const components = [
   EmployeeDetailsComponent,
   ProjectComponent,
   ProjectListComponent,
+  ProjectInfoComponent,
+  ProjectDetailsComponent,
+  RoleComponent,
 ];
 
 @NgModule({
-  declarations: [...components, ProjectInfoComponent, ProjectDetailsComponent],
+  declarations: [...components],
   imports: [
     CommonModule,
     FormsModule,

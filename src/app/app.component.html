@@ -13,6 +13,10 @@
         <mat-icon>folder</mat-icon>
         <span *ngIf="opened">Projects</span>
       </a>
+      <a mat-list-item routerLink="admin/roles" matTooltip="Roles" matTooltipPosition="right">
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span *ngIf="opened">Roles</span>
+      </a>
       <a mat-list-item routerLink="/settings" matTooltip="Settings" matTooltipPosition="right">
         <mat-icon>settings</mat-icon>
         <span *ngIf="opened">Settings</span>

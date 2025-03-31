@@ -1,0 +1,42 @@
+@import "src/styles/variables";
+
+.info-panel {
+  color: $text-color;
+  font-size: 12px;
+  line-height: 18px;
+
+  .info-panel-header {
+    height: 32px;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 8px;
+
+    .mat-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .info-panel-body {
+    padding: 8px;
+
+    .info-properties-container {
+      margin-top: 12px;
+      display: flex;
+
+      .info-property {
+        width: 50%;
+
+        .info-property-name {
+          font-size: 11px;
+          line-height: 16px;
+          color: $neutral-4;
+        }
+      }
+    }
+  }
+}
